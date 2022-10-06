@@ -1,0 +1,104 @@
+* {
+    font-family: 'Sora', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #FAEAD3;
+    padding-top: 60px;
+}
+
+#top{
+    float:left;
+    width: 50%;
+}
+
+h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 4vw;
+    color: #FF0000;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2vw;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+p {
+    font-size: 1.5vw;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+figcaption{
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+
+iframe{
+    border-radius: 8px;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    height: 2.5rem;    
+    padding-top: 2.5rem; 
+}
+
+.column {
+    float: left;
+    width: 21.5%;
+    padding: 5px;
+    margin: 1%;
+    height: auto;
+    
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    justify-content:center;
+    align-items:center;
+}
+  
+
+/* On screens that are 768 or less */
+@media screen and (max-width: 768px) {
+    .column {
+        width: 46%;
+    }
+}
+
+/* On screens that are 576 or less */
+@media screen and (max-width: 576px) {
+    .column {
+        width: 98%;
+        max-width: 250px;
+        float:none;
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Credit: https://code-boxx.com/rotate-spin-image-html-css/#sec-animate */
+@keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+  .spin:hover {
+    animation-name: spinning;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
