@@ -2,23 +2,33 @@
     font-family: 'Sora', Arial, sans-serif;
 }
 
+/* Enable smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
+/* Page layout */
 body {
     background-color: #FAEAD3;
     padding-top: 60px;
+    display: grid;
+	grid-template-columns: 1fr 15em;
+	max-width: 100em;
+	width: 90%;
+	margin: 0 auto;
 }
 
-#top{
-    float:left;
-    width: 50%;
-}
-
+/* Settings for font size */
 h1 {
     font-family: 'Satisfy', cursive;
     font-size: 4vw;
+    color: #FF0000;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Satisfy', cursive;
+    font-size: 3vw;
     color: #FF0000;
     text-align: center;
 }
@@ -30,7 +40,7 @@ h3 {
 }
 
 p {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -40,22 +50,44 @@ figcaption{
     text-align: center;
 }
 
-
-iframe{
-    border-radius: 8px;
+/* Hide numbers and bullet points of lists */
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	margin-left: 1rem;
 }
 
-footer{
-    text-align: center;
-    width: 100%;
-    bottom: 0;
-    height: 2.5rem;    
-    padding-top: 2.5rem; 
+/* Button layout */
+#btn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    width:60px;
+    height:60px;
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: #FF0000; 
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50%; 
+    font-size: 24px;
 }
 
+  
+#btn:hover {
+    background-color: #666; /* Add a dark-grey background on hover */
+}
+
+/* Format rows and columns */
 .column {
     float: left;
-    width: 21.5%;
+    width: 20.5%;
     padding: 5px;
     margin: 1%;
     height: auto;
@@ -69,12 +101,64 @@ footer{
     justify-content:center;
     align-items:center;
 }
-  
+
+/* Footer layout */
+footer{
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    height: 2.5rem;    
+    padding-top: 2.5rem; 
+}
+
+/* Credit: https://code-boxx.com/rotate-spin-image-html-css/#sec-animate */
+/* Make paper-cut to spin once hover */
+@keyframes spinning {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+  .spin:hover {
+    animation-name: spinning;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+/* Sidebar Navigation */
+.nav li.active > a {
+	color: #333;
+	font-weight: 500;
+}
+
+nav {
+	position: sticky;
+	top: 2%;
+	align-self: start;
+}
+
+.nav {
+	padding-left: 0;
+	border-left: 1px solid #efefef;
+}
+
+.nav a {
+	text-decoration: none;
+	display: block;
+	padding: .125rem 0;
+	color: #ccc;
+	transition: all 50ms ease-in-out; 
+}
+
+.nav a:hover,
+.nav a:focus {
+	color: #666;
+}
 
 /* On screens that are 768 or less */
 @media screen and (max-width: 768px) {
     .column {
-        width: 46%;
+        width: 44%;
     }
 }
 
@@ -88,17 +172,14 @@ footer{
         margin-left: auto;
         margin-right: auto;
     }
+    body {
+        display: block;
+        grid-template-columns: 1fr 15em;
+        max-width: 100em;
+        width: 100%;
+        margin: 0 auto;
+    }
+    nav .nav .nav a{
+        display:none;
+    }
 }
-
-/* Credit: https://code-boxx.com/rotate-spin-image-html-css/#sec-animate */
-@keyframes spinning {
-    from { transform: rotate(0deg) }
-    to { transform: rotate(360deg) }
-  }
-  .spin:hover {
-    animation-name: spinning;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
-
